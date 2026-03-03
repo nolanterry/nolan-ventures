@@ -29,9 +29,9 @@ const products = [
     tagline: "Digital fire inspection reports (NFPA compliant)",
     description:
       "Replace paper checklists with mobile-first NFPA inspection forms. Branded PDF reports, deficiency tracking, and compliance documentation.",
-    url: "#",
-    status: "Researching",
-    price: "Coming soon",
+    url: "https://firelog-site.vercel.app",
+    status: "Building",
+    price: "$79/mo",
     color: "from-orange-500 to-red-600",
     icon: "🔥",
   },
