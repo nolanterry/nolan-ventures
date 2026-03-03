@@ -5,11 +5,11 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Nolan Ventures — Vertical SaaS for Underserved Industries",
+  title: "Arcline — Vertical SaaS for Underserved Industries",
   description:
     "Building compliance-grade software at indie prices. FenceCalc, ShieldAI, and more.",
   openGraph: {
-    title: "Nolan Ventures",
+    title: "Arcline",
     description:
       "Building vertical SaaS for underserved industries. Compliance-grade software at indie prices.",
     type: "website",

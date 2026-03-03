@@ -44,15 +44,13 @@ export default function Home() {
       <header className="max-w-5xl mx-auto px-6 pt-20 pb-16">
         <div className="space-y-6">
           <h1 className="text-5xl md:text-6xl font-bold tracking-tight">
-            Nolan Ventures
+            Arcline
           </h1>
           <p className="text-xl md:text-2xl text-gray-400 max-w-2xl">
             Building vertical SaaS for underserved industries. Compliance-grade
             software at indie prices.
           </p>
           <div className="flex gap-4 text-sm text-gray-500">
-            <span>Washington, DC</span>
-            <span>·</span>
             <span>Est. 2026</span>
           </div>
         </div>
@@ -184,52 +182,18 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Also */}
-      <section className="max-w-5xl mx-auto px-6 pb-20">
-        <div className="border border-white/10 rounded-2xl p-8 bg-white/[0.02]">
-          <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">
-            Also Building
-          </h2>
-          <div className="space-y-4">
-            <div>
-              <h3 className="font-semibold text-lg">Scian.io</h3>
-              <p className="text-sm text-gray-400">
-                Productized GTM platform for B2B SaaS. Push a feature, get a
-                campaign. AI-powered ICP targeting, outbound sequences, and
-                multi-channel distribution.
-              </p>
-              <Link
-                href="https://scian.io"
-                target="_blank"
-                className="text-sm text-white/60 hover:text-white transition-colors"
-              >
-                scian.io →
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Footer */}
       <footer className="max-w-5xl mx-auto px-6 py-12 border-t border-white/10">
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-gray-600">
-            © 2026 Nolan Ventures. Washington, DC.
+            © 2026 Arcline.
           </p>
           <div className="flex gap-6 text-sm text-gray-500">
             <Link
-              href="https://x.com/nolanterry"
-              target="_blank"
+              href="mailto:hello@arcline.dev"
               className="hover:text-white transition-colors"
             >
-              X / Twitter
-            </Link>
-            <Link
-              href="mailto:nolan@scian.io"
-              target="_blank"
-              className="hover:text-white transition-colors"
-            >
-              Email
+              Contact
             </Link>
           </div>
         </div>
