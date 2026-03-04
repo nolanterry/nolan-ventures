@@ -148,7 +148,7 @@ export default function Home() {
             <span>4 Active Companies</span>
             <span>·</span>
             <span>8 in Pipeline</span>
-            <UserButton afterSignOutUrl="/sign-in" />
+            <UserButton />
           </div>
         </div>
       </header>
