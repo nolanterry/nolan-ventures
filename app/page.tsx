@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { UserButton } from "@clerk/nextjs";
 
 // ──────────────────────────────────────────────
 // Portfolio Companies
@@ -147,6 +148,7 @@ export default function Home() {
             <span>4 Active Companies</span>
             <span>·</span>
             <span>8 in Pipeline</span>
+            <UserButton afterSignOutUrl="/sign-in" />
           </div>
         </div>
       </header>

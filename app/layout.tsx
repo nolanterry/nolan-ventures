@@ -1,19 +1,14 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { ClerkProvider } from "@clerk/nextjs";
+import { dark } from "@clerk/themes";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Arcline — Vertical SaaS for Underserved Industries",
-  description:
-    "Building compliance-grade software at indie prices. FenceCalc, ShieldAI, and more.",
-  openGraph: {
-    title: "Arcline",
-    description:
-      "Building vertical SaaS for underserved industries. Compliance-grade software at indie prices.",
-    type: "website",
-  },
+  title: "Arcline — Command Center",
+  description: "Internal portfolio command center.",
 };
 
 export default function RootLayout({
@@ -22,8 +17,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${inter.className} antialiased`}>{children}</body>
-    </html>
+    <ClerkProvider appearance={{ baseTheme: dark }}>
+      <html lang="en">
+        <body className={`${inter.className} antialiased`}>{children}</body>
+      </html>
+    </ClerkProvider>
   );
 }
