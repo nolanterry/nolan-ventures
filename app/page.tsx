@@ -14,23 +14,23 @@ const DIVISIONS = [
       "Productized GTM platform for B2B SaaS. Clients import new features → AI generates ICP targeting, lead lists, email sequences, LinkedIn touches, content. Review queue → one-click launch across all channels.",
     url: "https://scian.io",
     siteUrl: "https://scian-site.vercel.app",
-    status: "Pivoting",
-    statusColor: "text-amber-400 bg-amber-500/10",
+    status: "Building",
+    statusColor: "text-blue-400 bg-blue-500/10",
     price: "$1,500-5,000/mo",
     icon: "⚡",
-    arr: "$50K",
+    arr: "$0",
     metrics: [
-      { label: "Current ARR", value: "$50K" },
+      { label: "Price", value: "$1.5-5K/mo" },
       { label: "Target", value: "$5M in 3yr" },
       { label: "Model", value: "Platform SaaS" },
     ],
     roadmap: [
+      { item: "Marketing site live", status: "done" },
       { item: "Customer Hub MVP — client-facing glass pane", status: "building" },
       { item: "AI campaign generator (feature → ICP → sequences)", status: "building" },
       { item: "Review queue with human-in-the-loop approval", status: "planned" },
       { item: "Multi-channel launch (email, LinkedIn, content, ads)", status: "planned" },
       { item: "Onboard first 3 pilot customers", status: "planned" },
-      { item: "Performance analytics dashboard", status: "planned" },
     ],
   },
   {
@@ -38,24 +38,24 @@ const DIVISIONS = [
     division: "Vertical SaaS",
     tagline: "Fence estimating software that wins more jobs",
     description:
-      "Satellite measurement, auto material takeoffs, branded PDF proposals, e-signatures, online payments, CRM, tiered estimates. Built for fence contractors.",
-    url: "https://thefencecalc.com",
-    siteUrl: "https://thefencecalc.com",
-    appUrl: "https://app.thefencecalc.com",
+      "Satellite measurement, auto material takeoffs, branded PDF proposals, e-signatures, online payments, CRM, tiered estimates. Built for fence contractors. Distribution phase: SEO + cold outbound warming.",
+    url: "https://fencecalc.co",
+    siteUrl: "https://fencecalc.co",
+    appUrl: "https://app.fencecalc.co",
     status: "Live",
     statusColor: "text-emerald-400 bg-emerald-500/10",
-    price: "$79/mo",
+    price: "$79/mo ($59 annual)",
     icon: "🏗️",
     arr: "$0",
     metrics: [
       { label: "Price", value: "$79/mo" },
-      { label: "TAM", value: "346K businesses" },
-      { label: "SEO Pages", value: "28 live" },
+      { label: "SEO Pages", value: "31+" },
+      { label: "Stage", value: "Distribution" },
     ],
     roadmap: [
-      { item: "Cold outbound via Instantly (3 sequences ready)", status: "ready" },
-      { item: "Stripe price IDs + billing live", status: "blocked" },
-      { item: "G2 / Capterra listings", status: "ready" },
+      { item: "SEO: 19 blog posts, 8 comparison, 2 landing, 2 feature pages", status: "done" },
+      { item: "Cold outbound warming via Instantly", status: "building" },
+      { item: "G2 / Capterra listings", status: "planned" },
       { item: "First 10 paying customers", status: "planned" },
       { item: "Supplier catalog integration", status: "planned" },
     ],
@@ -66,20 +66,21 @@ const DIVISIONS = [
     tagline: "AI tool approval workflows for financial services",
     description:
       "Evaluate, approve, and monitor every AI tool employees want to use. Built for compliance officers at PE firms, banks, hedge funds, and RIAs. SOC2, SOX, GLBA, FINRA, SEC, EU AI Act.",
-    url: "https://tryshieldai.com",
-    siteUrl: "https://tryshieldai.com",
-    status: "Built",
+    url: "https://shieldai-site.vercel.app",
+    siteUrl: "https://shieldai-site.vercel.app",
+    status: "MVP Built",
     statusColor: "text-blue-400 bg-blue-500/10",
     price: "$199-499/mo",
     icon: "🛡️",
     arr: "$0",
     metrics: [
-      { label: "Price", value: "$199-499/mo" },
-      { label: "Target", value: "PE/Hedge/RIA" },
-      { label: "App Files", value: "73 files" },
+      { label: "Starter", value: "$199/mo" },
+      { label: "Pro", value: "$499/mo" },
+      { label: "Stage", value: "Pre-launch" },
     ],
     roadmap: [
-      { item: "Deploy to Vercel (needs Clerk + Neon keys)", status: "blocked" },
+      { item: "MVP built", status: "done" },
+      { item: "Deploy + launch", status: "planned" },
       { item: "Slack/Teams integration for approvals", status: "planned" },
       { item: "Outbound to compliance officers", status: "planned" },
       { item: "First 5 paying customers", status: "planned" },
@@ -93,7 +94,7 @@ const DIVISIONS = [
       "Replace paper checklists with mobile-first NFPA inspection forms. Pre-built templates (NFPA 10/25/72/80), branded PDF reports, deficiency tracking, compliance documentation.",
     url: "https://firelog-site.vercel.app",
     siteUrl: "https://firelog-site.vercel.app",
-    status: "Built",
+    status: "MVP Built",
     statusColor: "text-blue-400 bg-blue-500/10",
     price: "$49/mo",
     icon: "🔥",
@@ -101,19 +102,45 @@ const DIVISIONS = [
     metrics: [
       { label: "Price", value: "$49/mo" },
       { label: "TAM", value: "19,845 businesses" },
-      { label: "App Files", value: "49 files" },
+      { label: "Stage", value: "Pre-launch" },
     ],
     roadmap: [
-      { item: "Deploy to Vercel (needs Clerk + Neon keys)", status: "blocked" },
+      { item: "MVP built", status: "done" },
+      { item: "Deploy + launch", status: "planned" },
       { item: "NFPA 96 + Hood Suppression template", status: "planned" },
       { item: "Outbound to fire protection companies", status: "planned" },
+      { item: "First 10 paying customers", status: "planned" },
+    ],
+  },
+  {
+    name: "ClaimScribe AI",
+    division: "Vertical SaaS",
+    tagline: "AI damage scoping for restoration contractors",
+    description:
+      "AI-powered damage scoping tool for restoration contractors. Upload photos, get accurate Xactimate-ready estimates. Reduce supplement cycles and speed up insurance approvals.",
+    url: "https://claimscribe-site.vercel.app",
+    siteUrl: "https://claimscribe-site.vercel.app",
+    status: "Validation",
+    statusColor: "text-amber-400 bg-amber-500/10",
+    price: "$199-299/mo",
+    icon: "📋",
+    arr: "$0",
+    metrics: [
+      { label: "Starter", value: "$199/mo" },
+      { label: "Pro", value: "$299/mo" },
+      { label: "Stage", value: "Validation" },
+    ],
+    roadmap: [
+      { item: "Marketing site live", status: "done" },
+      { item: "Validate demand + greenlight decision", status: "building" },
+      { item: "Build MVP app", status: "planned" },
+      { item: "Outbound to restoration contractors", status: "planned" },
       { item: "First 10 paying customers", status: "planned" },
     ],
   },
 ];
 
 const PIPELINE = [
-  { name: "DeckCalc", desc: "Deck estimating (fork FenceCalc)", validated: true },
   { name: "SepticPro", desc: "Septic inspection documentation", validated: false },
   { name: "BackflowBoss", desc: "Backflow test reports", validated: false },
   { name: "WeldTrack", desc: "Weld inspection tracking", validated: false },
@@ -145,9 +172,9 @@ export default function Home() {
             <span className="text-xs text-gray-500 border border-white/10 px-2 py-0.5 rounded">Command Center</span>
           </div>
           <div className="flex items-center gap-4 text-sm text-gray-500">
-            <span>4 Active Companies</span>
+            <span>5 Active Companies</span>
             <span>·</span>
-            <span>8 in Pipeline</span>
+            <span>7 in Pipeline</span>
             <UserButton />
           </div>
         </div>
@@ -157,10 +184,10 @@ export default function Home() {
       <section className="max-w-7xl mx-auto px-6 pt-10 pb-6">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {[
-            { label: "Portfolio ARR", value: "$50K", sub: "Target: $3.6M" },
-            { label: "Active Products", value: "4", sub: "1 live, 2 built, 1 pivoting" },
-            { label: "SEO Pages", value: "34", sub: "Compounding organic traffic" },
-            { label: "Pipeline", value: "8", sub: "Products queued for build" },
+            { label: "Portfolio ARR", value: "$0", sub: "Target: $3.6M" },
+            { label: "Active Products", value: "5", sub: "1 live, 2 MVP, 1 building, 1 validating" },
+            { label: "SEO Pages", value: "31+", sub: "FenceCalc distribution phase" },
+            { label: "Pipeline", value: "7", sub: "Products queued for build" },
           ].map((stat) => (
             <div key={stat.label} className="border border-white/10 rounded-xl p-4 bg-white/[0.02]">
               <p className="text-xs text-gray-500 uppercase tracking-wider">{stat.label}</p>
@@ -228,7 +255,7 @@ export default function Home() {
                     {co.roadmap.map((r) => (
                       <div key={r.item} className="flex items-start gap-2 text-sm">
                         <StatusDot status={r.status} />
-                        <span className={r.status === "blocked" ? "text-red-400" : r.status === "ready" ? "text-amber-400" : "text-gray-400"}>
+                        <span className={r.status === "blocked" ? "text-red-400" : r.status === "ready" ? "text-amber-400" : r.status === "done" ? "text-emerald-400" : "text-gray-400"}>
                           {r.item}
                         </span>
                       </div>
