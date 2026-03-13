@@ -152,22 +152,22 @@ export default function Home() {
           <BlurFade delay={0.1}>
             <div className="inline-flex items-center rounded-full border border-white/10 bg-white/[0.03] px-4 py-1.5 mb-8">
               <AnimatedShinyText className="text-sm">
-                Venture Studio &mdash; Building Software for Regulated Industries
+                Venture Studio &mdash; Building for Underserved Markets
               </AnimatedShinyText>
             </div>
           </BlurFade>
 
           <BlurFade delay={0.2}>
             <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold leading-[1.1] tracking-tight mb-6">
-              <span className="text-gradient">Software for industries</span>
+              <span className="text-gradient">Building in markets</span>
               <br />
-              <span className="text-gradient-brand">the market ignores.</span>
+              <span className="text-gradient-brand">others overlook.</span>
             </h1>
           </BlurFade>
 
           <BlurFade delay={0.3}>
             <p className="text-lg md:text-xl text-zinc-400 max-w-2xl leading-relaxed mb-10">
-              Arcline Ventures identifies underserved regulated industries, builds modern SaaS tools, and scales them. Compliance-driven workflows. Mobile-first. Priced for the market, not the enterprise.
+              Arcline builds modern software for underserved industries. Markets too small for big tech, too important to ignore.
             </p>
           </BlurFade>
 
@@ -235,12 +235,12 @@ export default function Home() {
           </BlurFade>
           <BlurFade delay={0.2}>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-6">
-              <span className="text-gradient">Compliance as a workflow.</span>
+              <span className="text-gradient">Underserved ≠ unimportant.</span>
             </h2>
           </BlurFade>
           <BlurFade delay={0.3}>
             <p className="text-lg text-zinc-400 leading-relaxed max-w-3xl">
-              Regulated industries run on mandated documentation &mdash; most of it still trapped in paper and legacy software. We build modern, mobile-first alternatives for the industries that need them most.
+              Underserved industries still run on paper, spreadsheets, and software built a decade ago. We find those markets and build what should already exist.
             </p>
           </BlurFade>
         </div>
@@ -353,9 +353,9 @@ export default function Home() {
         <div className="max-w-4xl mx-auto px-6 text-center">
           <BlurFade delay={0.1}>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-6">
-              <span className="text-gradient">Building for the industries</span>
+              <span className="text-gradient">Every market deserves</span>
               <br />
-              <span className="text-gradient-brand">that can&apos;t afford to fail.</span>
+              <span className="text-gradient-brand">modern tools.</span>
             </h2>
           </BlurFade>
           <BlurFade delay={0.2}>
@@ -385,7 +385,7 @@ export default function Home() {
             <div>
               <p className="text-lg font-semibold tracking-tight mb-2">arcline</p>
               <p className="text-sm text-zinc-500">
-                Venture studio building SaaS for regulated industries.
+                Venture studio building software for underserved markets.
               </p>
             </div>
             <div className="flex items-center gap-8 text-sm text-zinc-500">
