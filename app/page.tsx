@@ -1,429 +1,426 @@
-import Link from "next/link";
-// ──────────────────────────────────────────────
-// Portfolio Companies
-// ──────────────────────────────────────────────
+"use client";
 
-const DIVISIONS = [
+import Link from "next/link";
+import { AuroraBackground } from "@/components/ui/aurora-background";
+import { BlurFade } from "@/components/ui/blur-fade";
+import { ShimmerButton } from "@/components/ui/shimmer-button";
+import { NumberTicker } from "@/components/ui/number-ticker";
+import { AnimatedShinyText } from "@/components/ui/animated-shiny-text";
+import {
+  ArrowRight,
+  Shield,
+  Flame,
+  CreditCard,
+  FileCheck,
+  Wrench,
+  BarChart3,
+  Cpu,
+  ExternalLink,
+} from "lucide-react";
+
+const PRODUCTS = [
   {
     name: "Scian.io",
-    division: "GTM Platform",
-    tagline: "Push a feature, get a campaign",
-    description:
-      "Productized GTM platform for B2B SaaS. Clients import new features → AI generates ICP targeting, lead lists, email sequences, LinkedIn touches, content. Review queue → one-click launch across all channels.",
-    url: "https://scian.io",
-    siteUrl: "https://scian-site.vercel.app",
-    status: "Building",
-    statusColor: "text-blue-400 bg-blue-500/10",
-    price: "$1,500-5,000/mo",
-    icon: "⚡",
-    arr: "$0",
-    metrics: [
-      { label: "Price", value: "$1.5-5K/mo" },
-      { label: "Target", value: "$5M in 3yr" },
-      { label: "Model", value: "Platform SaaS" },
-    ],
-    roadmap: [
-      { item: "Marketing site live", status: "done" },
-      { item: "Customer Hub MVP — client-facing glass pane", status: "building" },
-      { item: "AI campaign generator (feature → ICP → sequences)", status: "building" },
-      { item: "Review queue with human-in-the-loop approval", status: "planned" },
-      { item: "Multi-channel launch (email, LinkedIn, content, ads)", status: "planned" },
-      { item: "Onboard first 3 pilot customers", status: "planned" },
-    ],
+    tagline: "AI-powered revenue infrastructure for B2B SaaS",
+    status: "Active",
+    price: null,
+    link: "https://scian-site.vercel.app",
+    icon: BarChart3,
   },
   {
     name: "FenceCalc",
-    division: "Vertical SaaS",
-    tagline: "Fence estimating software that wins more jobs",
-    description:
-      "Satellite measurement, auto material takeoffs, branded PDF proposals, e-signatures, online payments, CRM, tiered estimates. Built for fence contractors. Distribution phase: SEO + cold outbound warming.",
-    url: "https://fencecalc.co",
-    siteUrl: "https://fencecalc.co",
-    appUrl: "https://app.fencecalc.co",
+    tagline: "Fence contractor estimating software",
     status: "Live",
-    statusColor: "text-emerald-400 bg-emerald-500/10",
-    price: "$79/mo ($59 annual)",
-    icon: "🏗️",
-    arr: "$0",
-    metrics: [
-      { label: "Price", value: "$79/mo" },
-      { label: "SEO Pages", value: "31+" },
-      { label: "Stage", value: "Distribution" },
-    ],
-    roadmap: [
-      { item: "SEO: 19 blog posts, 8 comparison, 2 landing, 2 feature pages", status: "done" },
-      { item: "Cold outbound warming via Instantly", status: "building" },
-      { item: "G2 / Capterra listings", status: "planned" },
-      { item: "First 10 paying customers", status: "planned" },
-      { item: "Supplier catalog integration", status: "planned" },
-    ],
+    price: "$79/mo",
+    link: "https://fencecalc.co",
+    icon: Wrench,
   },
   {
     name: "ShieldAI",
-    division: "Vertical SaaS",
     tagline: "AI tool approval workflows for financial services",
-    description:
-      "Evaluate, approve, and monitor every AI tool employees want to use. Built for compliance officers at PE firms, banks, hedge funds, and RIAs. SOC2, SOX, GLBA, FINRA, SEC, EU AI Act.",
-    url: "https://shieldai-site.vercel.app",
-    siteUrl: "https://shieldai-site.vercel.app",
-    status: "MVP Built",
-    statusColor: "text-blue-400 bg-blue-500/10",
-    price: "$199-499/mo",
-    icon: "🛡️",
-    arr: "$0",
-    metrics: [
-      { label: "Starter", value: "$199/mo" },
-      { label: "Pro", value: "$499/mo" },
-      { label: "Stage", value: "Pre-launch" },
-    ],
-    roadmap: [
-      { item: "MVP built", status: "done" },
-      { item: "Deploy + launch", status: "planned" },
-      { item: "Slack/Teams integration for approvals", status: "planned" },
-      { item: "Outbound to compliance officers", status: "planned" },
-      { item: "First 5 paying customers", status: "planned" },
-    ],
+    status: "Active",
+    price: "$199\u2013499/mo",
+    link: null,
+    icon: Shield,
   },
   {
     name: "FireLog",
-    division: "Vertical SaaS",
     tagline: "Digital fire inspection reports (NFPA compliant)",
-    description:
-      "Replace paper checklists with mobile-first NFPA inspection forms. Pre-built templates (NFPA 10/25/72/80), branded PDF reports, deficiency tracking, compliance documentation.",
-    url: "https://firelog-site.vercel.app",
-    siteUrl: "https://firelog-site.vercel.app",
-    status: "MVP Built",
-    statusColor: "text-blue-400 bg-blue-500/10",
+    status: "Active",
     price: "$49/mo",
-    icon: "🔥",
-    arr: "$0",
-    metrics: [
-      { label: "Price", value: "$49/mo" },
-      { label: "TAM", value: "19,845 businesses" },
-      { label: "Stage", value: "Pre-launch" },
-    ],
-    roadmap: [
-      { item: "MVP built", status: "done" },
-      { item: "Deploy + launch", status: "planned" },
-      { item: "NFPA 96 + Hood Suppression template", status: "planned" },
-      { item: "Outbound to fire protection companies", status: "planned" },
-      { item: "First 10 paying customers", status: "planned" },
-    ],
+    link: null,
+    icon: Flame,
+  },
+  {
+    name: "CraneCheck",
+    tagline: "Crane inspection & OSHA compliance software",
+    status: "Active",
+    price: "$79/mo",
+    link: null,
+    icon: FileCheck,
   },
   {
     name: "ClaimScribe AI",
-    division: "Vertical SaaS",
     tagline: "AI damage scoping for restoration contractors",
-    description:
-      "AI-powered damage scoping tool for restoration contractors. Upload photos, get accurate Xactimate-ready estimates. Reduce supplement cycles and speed up insurance approvals.",
-    url: "https://claimscribe-site.vercel.app",
-    siteUrl: "https://claimscribe-site.vercel.app",
-    status: "Validation",
-    statusColor: "text-amber-400 bg-amber-500/10",
-    price: "$199-299/mo",
-    icon: "📋",
-    arr: "$0",
-    metrics: [
-      { label: "Starter", value: "$199/mo" },
-      { label: "Pro", value: "$299/mo" },
-      { label: "Stage", value: "Validation" },
-    ],
-    roadmap: [
-      { item: "Marketing site live", status: "done" },
-      { item: "Validate demand + greenlight decision", status: "building" },
-      { item: "Build MVP app", status: "planned" },
-      { item: "Outbound to restoration contractors", status: "planned" },
-      { item: "First 10 paying customers", status: "planned" },
-    ],
+    status: "Active",
+    price: "$199\u2013299/mo",
+    link: null,
+    icon: CreditCard,
+  },
+  {
+    name: "WeldCert",
+    tagline: "Welder certification & qualification tracking",
+    status: "Active",
+    price: "$49\u2013299/mo",
+    link: null,
+    icon: Cpu,
   },
 ];
 
-const PIPELINE = [
-  { name: "SepticPro", desc: "Septic inspection documentation", validated: false },
-  { name: "BackflowBoss", desc: "Backflow test reports", validated: false },
-  { name: "WeldTrack", desc: "Weld inspection tracking", validated: false },
-  { name: "ArborBooks", desc: "Arborist reporting", validated: false },
-  { name: "PestLog", desc: "Pest control documentation", validated: false },
-  { name: "CraneLog", desc: "Crane inspection records", validated: false },
-  { name: "ElevatorDoc", desc: "Elevator inspection reports", validated: false },
+const STEPS = [
+  {
+    num: "01",
+    title: "Find",
+    desc: "Identify regulated niches with mandated documentation, paper-based workflows, and overpriced incumbents.",
+  },
+  {
+    num: "02",
+    title: "Build",
+    desc: "Ship an MVP in 2 weeks. Shared platform infrastructure: Clerk, Neon, Stripe, Next.js. Fork the codebase, customize for the vertical.",
+  },
+  {
+    num: "03",
+    title: "Validate",
+    desc: "30-day kill criteria. Paying customers or move on. No sunk cost fallacy. Zero tolerance for building without signal.",
+  },
+  {
+    num: "04",
+    title: "Scale",
+    desc: "SEO, cold outbound, community. No paid ads until product-market fit confirmed. Compound organic distribution.",
+  },
 ];
 
-function StatusDot({ status }: { status: string }) {
+const REASONS = [
+  {
+    title: "Fear-Driven Buyers",
+    desc: "Failed audits mean fines, lost certifications, and shutdowns. Compliance software isn\u2019t a nice-to-have \u2014 it\u2019s insurance against business-ending risk.",
+  },
+  {
+    title: "Weak Incumbents",
+    desc: "Most regulated verticals are served by legacy tools built in 2005, charging enterprise prices for terrible UX. Modern alternatives win on experience and price.",
+  },
+  {
+    title: "Mandated Demand",
+    desc: "OSHA, NFPA, EPA, AWS, ASME \u2014 regulations don\u2019t go away. The TAM doesn\u2019t shrink. Every new regulation creates more software buyers.",
+  },
+];
+
+function StatusBadge({ status }: { status: string }) {
   const colors: Record<string, string> = {
-    building: "bg-blue-400",
-    ready: "bg-amber-400",
-    blocked: "bg-red-400",
-    planned: "bg-gray-500",
-    done: "bg-emerald-400",
+    Live: "text-emerald-400 bg-emerald-500/10 border-emerald-500/20",
+    Active: "text-brand-light bg-brand/10 border-brand/20",
+    Building: "text-blue-400 bg-blue-500/10 border-blue-500/20",
   };
-  return <span className={`inline-block w-2 h-2 rounded-full ${colors[status] || "bg-gray-500"}`} />;
+  return (
+    <span
+      className={`text-xs font-medium px-2.5 py-0.5 rounded-full border ${colors[status] || colors.Active}`}
+    >
+      {status}
+    </span>
+  );
 }
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-white">
+    <div className="min-h-screen bg-dark text-white">
       {/* Header */}
-      <header className="border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <span className="text-xl font-bold tracking-tight">▲ Arcline</span>
-            <span className="text-xs text-gray-500 border border-white/10 px-2 py-0.5 rounded">Command Center</span>
-          </div>
-          <div className="flex items-center gap-4 text-sm text-gray-500">
-            <span>5 Active Companies</span>
-            <span>·</span>
-            <span>7 in Pipeline</span>
-            {/* auth removed */}
-          </div>
+      <header className="fixed top-0 inset-x-0 z-50 border-b border-white/[0.06] bg-dark/80 backdrop-blur-xl">
+        <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+          <Link href="/" className="text-lg font-semibold tracking-tight">
+            arcline
+          </Link>
+          <nav className="hidden md:flex items-center gap-8 text-sm text-zinc-400">
+            <Link href="#portfolio" className="hover:text-white transition-colors">
+              Portfolio
+            </Link>
+            <Link href="#thesis" className="hover:text-white transition-colors">
+              Thesis
+            </Link>
+            <Link href="#model" className="hover:text-white transition-colors">
+              How We Build
+            </Link>
+          </nav>
         </div>
       </header>
 
-      {/* Portfolio Overview */}
-      <section className="max-w-7xl mx-auto px-6 pt-10 pb-6">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {[
-            { label: "Portfolio ARR", value: "$0", sub: "Target: $3.6M" },
-            { label: "Active Products", value: "5", sub: "1 live, 2 MVP, 1 building, 1 validating" },
-            { label: "SEO Pages", value: "31+", sub: "FenceCalc distribution phase" },
-            { label: "Pipeline", value: "7", sub: "Products queued for build" },
-          ].map((stat) => (
-            <div key={stat.label} className="border border-white/10 rounded-xl p-4 bg-white/[0.02]">
-              <p className="text-xs text-gray-500 uppercase tracking-wider">{stat.label}</p>
-              <p className="text-2xl font-bold mt-1">{stat.value}</p>
-              <p className="text-xs text-gray-600 mt-1">{stat.sub}</p>
+      {/* Hero */}
+      <AuroraBackground className="min-h-screen pt-16">
+        <div className="relative z-10 max-w-4xl mx-auto px-6 flex flex-col items-center justify-center min-h-[calc(100vh-4rem)] text-center">
+          <BlurFade delay={0.1}>
+            <div className="inline-flex items-center rounded-full border border-white/10 bg-white/[0.03] px-4 py-1.5 mb-8">
+              <AnimatedShinyText className="text-sm">
+                Venture Studio &mdash; Building Software for Regulated Industries
+              </AnimatedShinyText>
             </div>
-          ))}
-        </div>
-      </section>
+          </BlurFade>
 
-      {/* Company Cards */}
-      <section className="max-w-7xl mx-auto px-6 py-8">
-        <div className="space-y-6">
-          {DIVISIONS.map((co) => (
-            <div key={co.name} className="border border-white/10 rounded-2xl bg-white/[0.02] overflow-hidden">
-              {/* Company Header */}
-              <div className="p-6 flex flex-col md:flex-row md:items-start justify-between gap-4">
-                <div className="flex-1">
-                  <div className="flex items-center gap-3 mb-2">
-                    <span className="text-2xl">{co.icon}</span>
-                    <h2 className="text-xl font-bold">{co.name}</h2>
-                    <span className={`text-xs font-medium px-2.5 py-0.5 rounded-full ${co.statusColor}`}>
-                      {co.status}
-                    </span>
-                    <span className="text-xs text-gray-600 border border-white/10 px-2 py-0.5 rounded">
-                      {co.division}
-                    </span>
-                  </div>
-                  <p className="text-sm text-gray-400 mb-1 font-medium">{co.tagline}</p>
-                  <p className="text-sm text-gray-500 leading-relaxed max-w-2xl">{co.description}</p>
-                </div>
-                <div className="flex gap-3">
-                  {co.url && (
-                    <Link href={co.url} target="_blank" className="text-xs text-gray-500 hover:text-white border border-white/10 px-3 py-1.5 rounded-lg transition-colors">
-                      Site →
-                    </Link>
-                  )}
-                  {"appUrl" in co && co.appUrl && (
-                    <Link href={co.appUrl as string} target="_blank" className="text-xs text-gray-500 hover:text-white border border-white/10 px-3 py-1.5 rounded-lg transition-colors">
-                      App →
-                    </Link>
-                  )}
-                </div>
-              </div>
+          <BlurFade delay={0.2}>
+            <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold leading-[1.1] tracking-tight mb-6">
+              <span className="text-gradient">We build the software</span>
+              <br />
+              <span className="text-gradient-brand">nobody else will.</span>
+            </h1>
+          </BlurFade>
 
-              {/* Metrics + Roadmap */}
-              <div className="border-t border-white/10 grid md:grid-cols-2">
-                {/* Metrics */}
-                <div className="p-6 border-b md:border-b-0 md:border-r border-white/10">
-                  <p className="text-xs text-gray-500 uppercase tracking-wider mb-3">Key Metrics</p>
-                  <div className="grid grid-cols-3 gap-4">
-                    {co.metrics.map((m) => (
-                      <div key={m.label}>
-                        <p className="text-lg font-bold">{m.value}</p>
-                        <p className="text-xs text-gray-600">{m.label}</p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Roadmap */}
-                <div className="p-6">
-                  <p className="text-xs text-gray-500 uppercase tracking-wider mb-3">Roadmap</p>
-                  <div className="space-y-2">
-                    {co.roadmap.map((r) => (
-                      <div key={r.item} className="flex items-start gap-2 text-sm">
-                        <StatusDot status={r.status} />
-                        <span className={r.status === "blocked" ? "text-red-400" : r.status === "ready" ? "text-amber-400" : r.status === "done" ? "text-emerald-400" : "text-gray-400"}>
-                          {r.item}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Scian Productization Detail */}
-      <section className="max-w-7xl mx-auto px-6 py-8">
-        <div className="border border-white/10 rounded-2xl p-8 bg-white/[0.02]">
-          <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-6">
-            ⚡ Scian.io — Productization Roadmap
-          </h2>
-          <p className="text-gray-400 text-sm mb-6 max-w-3xl">
-            Scian is pivoting from agency (manual GTM delivery) to platform (AI-automated GTM delivery).
-            The product: a &quot;glass pane&quot; where B2B SaaS clients push features in and get full campaigns out.
-            Behind the glass: Clay + Instantly + HeyReach + GHL, all orchestrated by AI. The customer never touches the tools.
-          </p>
-
-          <div className="grid md:grid-cols-3 gap-6 mb-8">
-            <div className="border border-white/10 rounded-xl p-5">
-              <p className="text-xs text-gray-500 uppercase tracking-wider mb-3">Phase 1 — Foundation</p>
-              <div className="space-y-2 text-sm">
-                {[
-                  { item: "Customer Hub UI (Next.js + Clerk)", done: false },
-                  { item: "Feature intake form → structured data", done: false },
-                  { item: "ICP generator (feature → target personas)", done: false },
-                  { item: "Multi-tenant data model", done: false },
-                ].map((i) => (
-                  <div key={i.item} className="flex items-center gap-2">
-                    <span className={i.done ? "text-emerald-400" : "text-gray-600"}>{i.done ? "✓" : "○"}</span>
-                    <span className={i.done ? "text-gray-300" : "text-gray-500"}>{i.item}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="border border-white/10 rounded-xl p-5">
-              <p className="text-xs text-gray-500 uppercase tracking-wider mb-3">Phase 2 — AI Engine</p>
-              <div className="space-y-2 text-sm">
-                {[
-                  { item: "AI email sequence generator", done: false },
-                  { item: "AI LinkedIn touch generator", done: false },
-                  { item: "AI blog post / content generator", done: false },
-                  { item: "Lead list builder (Clay integration)", done: false },
-                  { item: "Review queue (human-in-the-loop)", done: false },
-                ].map((i) => (
-                  <div key={i.item} className="flex items-center gap-2">
-                    <span className={i.done ? "text-emerald-400" : "text-gray-600"}>{i.done ? "✓" : "○"}</span>
-                    <span className={i.done ? "text-gray-300" : "text-gray-500"}>{i.item}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="border border-white/10 rounded-xl p-5">
-              <p className="text-xs text-gray-500 uppercase tracking-wider mb-3">Phase 3 — Launch</p>
-              <div className="space-y-2 text-sm">
-                {[
-                  { item: "One-click multi-channel launch", done: false },
-                  { item: "Instantly + HeyReach orchestration", done: false },
-                  { item: "Performance analytics dashboard", done: false },
-                  { item: "3 pilot customers onboarded", done: false },
-                  { item: "Pricing: Starter $1.5K → Growth $3K → Scale $5K", done: false },
-                ].map((i) => (
-                  <div key={i.item} className="flex items-center gap-2">
-                    <span className={i.done ? "text-emerald-400" : "text-gray-600"}>{i.done ? "✓" : "○"}</span>
-                    <span className={i.done ? "text-gray-300" : "text-gray-500"}>{i.item}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          <div className="border border-white/10 rounded-xl p-5 bg-white/[0.02]">
-            <p className="text-xs text-gray-500 uppercase tracking-wider mb-2">The Flywheel</p>
-            <p className="text-sm text-gray-400">
-              More campaigns → more data → AI gets smarter → better results → higher retention → more customers → more campaigns.
-              Every campaign run through the platform makes the AI better at targeting, sequencing, and content generation.
-              At scale, Scian becomes a data moat — no agency can compete with AI trained on thousands of GTM campaigns.
+          <BlurFade delay={0.3}>
+            <p className="text-lg md:text-xl text-zinc-400 max-w-2xl leading-relaxed mb-10">
+              Arcline Ventures identifies underserved regulated industries, builds modern SaaS tools, and scales them. Compliance-driven workflows. Mobile-first. Priced for the market, not the enterprise.
             </p>
-          </div>
-        </div>
-      </section>
+          </BlurFade>
 
-      {/* Pipeline */}
-      <section className="max-w-7xl mx-auto px-6 py-8">
-        <div className="border border-white/10 rounded-2xl p-8 bg-white/[0.02]">
-          <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-6">
-            Product Pipeline
-          </h2>
-          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4">
-            {PIPELINE.map((p) => (
-              <div key={p.name} className="border border-white/10 rounded-lg p-4">
-                <div className="flex items-center justify-between mb-1">
-                  <h3 className="font-semibold text-sm">{p.name}</h3>
-                  {p.validated && (
-                    <span className="text-[10px] text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded">
-                      Validated
-                    </span>
-                  )}
+          <BlurFade delay={0.4}>
+            <div className="flex flex-col sm:flex-row items-center gap-4">
+              <Link href="#portfolio">
+                <ShimmerButton
+                  background="rgba(99, 102, 241, 0.9)"
+                  shimmerColor="rgba(255,255,255,0.3)"
+                  className="text-sm font-medium px-8 py-3"
+                >
+                  Explore Our Portfolio
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </ShimmerButton>
+              </Link>
+              <Link
+                href="#thesis"
+                className="text-sm text-zinc-400 hover:text-white transition-colors px-6 py-3"
+              >
+                Our Thesis &rarr;
+              </Link>
+            </div>
+          </BlurFade>
+        </div>
+      </AuroraBackground>
+
+      {/* Stats */}
+      <section className="py-20 border-b border-white/[0.04]">
+        <div className="max-w-6xl mx-auto px-6">
+          <BlurFade delay={0.1}>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+              {[
+                { value: 7, suffix: "", label: "Products" },
+                { value: 3, suffix: "", label: "Industries Served" },
+                { value: 2, suffix: "-week", label: "Build Cycles" },
+              ].map((stat) => (
+                <div key={stat.label} className="text-center">
+                  <div className="text-4xl md:text-5xl font-bold stat-glow">
+                    <NumberTicker value={stat.value} delay={0.3} />
+                    <span className="text-zinc-400 text-2xl md:text-3xl">{stat.suffix}</span>
+                  </div>
+                  <p className="text-sm text-zinc-500 mt-2">{stat.label}</p>
                 </div>
-                <p className="text-xs text-gray-500">{p.desc}</p>
+              ))}
+              <div className="text-center">
+                <div className="text-4xl md:text-5xl font-bold stat-glow">
+                  <span className="text-zinc-400 text-2xl md:text-3xl">$</span>
+                  <NumberTicker value={49} delay={0.3} />
+                  <span className="text-zinc-400 text-2xl md:text-3xl">&ndash;</span>
+                  <NumberTicker value={299} delay={0.3} />
+                  <span className="text-zinc-400 text-2xl md:text-3xl">/mo</span>
+                </div>
+                <p className="text-sm text-zinc-500 mt-2">Price Range</p>
               </div>
-            ))}
-          </div>
+            </div>
+          </BlurFade>
         </div>
       </section>
 
       {/* Thesis */}
-      <section className="max-w-7xl mx-auto px-6 py-8">
-        <div className="grid md:grid-cols-2 gap-6">
-          <div className="border border-white/10 rounded-2xl p-8 bg-white/[0.02]">
-            <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">
-              Vertical SaaS Thesis
-            </h2>
-            <p className="text-sm text-gray-400 leading-relaxed">
-              Regulated industries where documentation is legally mandated, currently paper-based,
-              and failure means fines or shutdowns. Each product targets a niche with weak incumbents
-              charging $200+/month. We deliver better tools at $49-79/month with modern mobile-first UX.
-              Shared infrastructure. 2-week build cycles. 30-day kill criteria.
+      <section id="thesis" className="py-24">
+        <div className="max-w-4xl mx-auto px-6">
+          <BlurFade delay={0.1}>
+            <p className="text-sm font-medium text-brand-light uppercase tracking-wider mb-4">
+              Our Thesis
             </p>
-          </div>
-          <div className="border border-white/10 rounded-2xl p-8 bg-white/[0.02]">
-            <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">
-              GTM Platform Thesis
+          </BlurFade>
+          <BlurFade delay={0.2}>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-6">
+              <span className="text-gradient">Compliance as a workflow.</span>
             </h2>
-            <p className="text-sm text-gray-400 leading-relaxed">
-              B2B SaaS companies need GTM execution but can&apos;t afford agencies ($15-30K/mo) and
-              don&apos;t have time to learn 6 tools. Scian is the platform layer: push a feature in,
-              get a full campaign out. 10× cheaper than agencies, 10× easier than DIY.
-              AI orchestration makes it scalable without headcount.
+          </BlurFade>
+          <BlurFade delay={0.3}>
+            <p className="text-lg text-zinc-400 leading-relaxed max-w-3xl">
+              Every regulated industry has the same problem: legally mandated documentation trapped in paper forms, spreadsheets, and legacy software charging $200+/month. We build modern alternatives &mdash; mobile-first, AI-enhanced, priced 60&ndash;80% lower. Each product targets a niche with weak incumbents and fear-driven buyers. If audits, fines, or shutdowns drive the purchase, we&apos;re interested.
             </p>
+          </BlurFade>
+        </div>
+      </section>
+
+      {/* Portfolio */}
+      <section id="portfolio" className="py-24 border-t border-white/[0.04]">
+        <div className="max-w-6xl mx-auto px-6">
+          <BlurFade delay={0.1}>
+            <p className="text-sm font-medium text-brand-light uppercase tracking-wider mb-4">
+              Portfolio
+            </p>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-12">
+              <span className="text-gradient">Active products.</span>
+            </h2>
+          </BlurFade>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {PRODUCTS.map((product, i) => {
+              const Icon = product.icon;
+              return (
+                <BlurFade key={product.name} delay={0.1 + i * 0.05}>
+                  <div className="glass rounded-2xl p-6 h-full flex flex-col justify-between hover:border-white/10 transition-all duration-300 group">
+                    <div>
+                      <div className="flex items-center justify-between mb-4">
+                        <div className="w-10 h-10 rounded-xl bg-brand/10 border border-brand/20 flex items-center justify-center">
+                          <Icon className="w-5 h-5 text-brand-light" />
+                        </div>
+                        <StatusBadge status={product.status} />
+                      </div>
+                      <h3 className="text-lg font-semibold mb-1">{product.name}</h3>
+                      <p className="text-sm text-zinc-400 leading-relaxed">
+                        {product.tagline}
+                      </p>
+                    </div>
+                    <div className="flex items-center justify-between mt-6 pt-4 border-t border-white/[0.04]">
+                      {product.price ? (
+                        <span className="text-sm font-medium text-zinc-300">
+                          {product.price}
+                        </span>
+                      ) : (
+                        <span className="text-sm text-zinc-600">Custom pricing</span>
+                      )}
+                      {product.link && (
+                        <Link
+                          href={product.link}
+                          target="_blank"
+                          className="text-xs text-zinc-500 hover:text-white flex items-center gap-1 transition-colors"
+                        >
+                          Visit <ExternalLink className="w-3 h-3" />
+                        </Link>
+                      )}
+                    </div>
+                  </div>
+                </BlurFade>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      {/* Build Model */}
-      <section className="max-w-7xl mx-auto px-6 py-8 pb-16">
-        <div className="border border-white/10 rounded-2xl p-8 bg-white/[0.02]">
-          <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-6">
-            The Model
-          </h2>
-          <div className="grid md:grid-cols-4 gap-6">
-            {[
-              { num: "01", title: "Find", desc: "Identify regulated niches with paper-based workflows and overpriced incumbents" },
-              { num: "02", title: "Build", desc: "Ship an MVP in 2 weeks using shared platform infrastructure (Clerk + Neon + Stripe + PDF)" },
-              { num: "03", title: "Validate", desc: "30-day kill criteria — paying customers or we move on. No sunk cost fallacy." },
-              { num: "04", title: "Scale", desc: "SEO + cold outbound + community. No paid ads until product-market fit confirmed." },
-            ].map((step) => (
-              <div key={step.num} className="space-y-3">
-                <span className="text-sm font-mono text-gray-600">{step.num}</span>
-                <h3 className="text-lg font-semibold">{step.title}</h3>
-                <p className="text-sm text-gray-500 leading-relaxed">{step.desc}</p>
-              </div>
+      {/* The Model */}
+      <section id="model" className="py-24 border-t border-white/[0.04]">
+        <div className="max-w-6xl mx-auto px-6">
+          <BlurFade delay={0.1}>
+            <p className="text-sm font-medium text-brand-light uppercase tracking-wider mb-4">
+              How We Build
+            </p>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-16">
+              <span className="text-gradient">Find. Build. Validate. Scale.</span>
+            </h2>
+          </BlurFade>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {STEPS.map((step, i) => (
+              <BlurFade key={step.num} delay={0.1 + i * 0.08}>
+                <div className="space-y-4">
+                  <span className="text-sm font-mono text-brand-light/60">
+                    {step.num}
+                  </span>
+                  <h3 className="text-xl font-semibold">{step.title}</h3>
+                  <p className="text-sm text-zinc-500 leading-relaxed">{step.desc}</p>
+                </div>
+              </BlurFade>
             ))}
           </div>
         </div>
       </section>
 
+      {/* Why Regulated Industries */}
+      <section className="py-24 border-t border-white/[0.04]">
+        <div className="max-w-6xl mx-auto px-6">
+          <BlurFade delay={0.1}>
+            <p className="text-sm font-medium text-brand-light uppercase tracking-wider mb-4">
+              Why Regulated Industries
+            </p>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-12">
+              <span className="text-gradient">The unfair advantages.</span>
+            </h2>
+          </BlurFade>
+
+          <div className="grid md:grid-cols-3 gap-5">
+            {REASONS.map((reason, i) => (
+              <BlurFade key={reason.title} delay={0.1 + i * 0.08}>
+                <div className="glass rounded-2xl p-8 h-full">
+                  <h3 className="text-lg font-semibold mb-3">{reason.title}</h3>
+                  <p className="text-sm text-zinc-400 leading-relaxed">{reason.desc}</p>
+                </div>
+              </BlurFade>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA */}
+      <section className="py-32 mesh-gradient">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <BlurFade delay={0.1}>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-6">
+              <span className="text-gradient">Building for the industries</span>
+              <br />
+              <span className="text-gradient-brand">that can&apos;t afford to fail.</span>
+            </h2>
+          </BlurFade>
+          <BlurFade delay={0.2}>
+            <p className="text-lg text-zinc-400 max-w-2xl mx-auto mb-10">
+              Interested in what we&apos;re building? We&apos;re always looking for operators, partners, and early customers.
+            </p>
+          </BlurFade>
+          <BlurFade delay={0.3}>
+            <Link href="mailto:hello@arcline.io">
+              <ShimmerButton
+                background="rgba(99, 102, 241, 0.9)"
+                shimmerColor="rgba(255,255,255,0.3)"
+                className="text-sm font-medium px-8 py-3"
+              >
+                Get in Touch
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </ShimmerButton>
+            </Link>
+          </BlurFade>
+        </div>
+      </section>
+
       {/* Footer */}
-      <footer className="border-t border-white/10 py-8">
-        <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-          <p className="text-sm text-gray-600">© 2026 Arcline.</p>
-          <p className="text-xs text-gray-700">Internal Command Center — Not Public</p>
+      <footer className="border-t border-white/[0.04] py-12">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+            <div>
+              <p className="text-lg font-semibold tracking-tight mb-2">arcline</p>
+              <p className="text-sm text-zinc-500">
+                Venture studio building SaaS for regulated industries.
+              </p>
+            </div>
+            <div className="flex items-center gap-8 text-sm text-zinc-500">
+              <Link href="#portfolio" className="hover:text-white transition-colors">
+                Portfolio
+              </Link>
+              <Link href="#thesis" className="hover:text-white transition-colors">
+                Thesis
+              </Link>
+              <Link href="#" className="hover:text-white transition-colors">
+                X
+              </Link>
+              <Link href="#" className="hover:text-white transition-colors">
+                LinkedIn
+              </Link>
+            </div>
+          </div>
+          <div className="divider mt-8 mb-6" />
+          <p className="text-xs text-zinc-600">&copy; 2026 Arcline Ventures</p>
         </div>
       </footer>
     </div>

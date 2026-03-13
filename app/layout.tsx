@@ -5,8 +5,8 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Arcline — Command Center",
-  description: "Internal portfolio command center.",
+  title: "Arcline Ventures — Micro-SaaS for Regulated Industries",
+  description: "Venture studio building modern SaaS tools for underserved regulated industries. Compliance-driven workflows. Mobile-first. Priced for the market.",
 };
 
 export default function RootLayout({
@@ -15,7 +15,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark">
       <body className={`${inter.className} antialiased`}>{children}</body>
     </html>
   );
