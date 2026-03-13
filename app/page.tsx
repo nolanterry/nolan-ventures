@@ -20,13 +20,6 @@ import {
 
 const PRODUCTS = [
   {
-    name: "Scian.io",
-    tagline: "AI-powered revenue infrastructure for B2B SaaS",
-    status: "Active",
-    link: "https://scian-site.vercel.app",
-    icon: BarChart3,
-  },
-  {
     name: "FenceCalc",
     tagline: "Fence contractor estimating software",
     status: "Live",
