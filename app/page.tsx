@@ -166,9 +166,9 @@ export default function Home() {
 
           <BlurFade delay={0.2}>
             <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold leading-[1.1] tracking-tight mb-6">
-              <span className="text-gradient">We build the software</span>
+              <span className="text-gradient">Software for industries</span>
               <br />
-              <span className="text-gradient-brand">nobody else will.</span>
+              <span className="text-gradient-brand">the market ignores.</span>
             </h1>
           </BlurFade>
 
@@ -182,8 +182,8 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row items-center gap-4">
               <Link href="#portfolio">
                 <ShimmerButton
-                  background="rgba(99, 102, 241, 0.9)"
-                  shimmerColor="rgba(255,255,255,0.3)"
+                  background="rgba(255, 255, 255, 0.1)"
+                  shimmerColor="rgba(255,255,255,0.2)"
                   className="text-sm font-medium px-8 py-3"
                 >
                   Explore Our Portfolio
@@ -382,8 +382,8 @@ export default function Home() {
           <BlurFade delay={0.3}>
             <Link href="mailto:hello@arcline.io">
               <ShimmerButton
-                background="rgba(99, 102, 241, 0.9)"
-                shimmerColor="rgba(255,255,255,0.3)"
+                background="rgba(255, 255, 255, 0.1)"
+                shimmerColor="rgba(255,255,255,0.2)"
                 className="text-sm font-medium px-8 py-3"
               >
                 Get in Touch
