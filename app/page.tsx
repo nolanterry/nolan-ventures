@@ -23,7 +23,6 @@ const PRODUCTS = [
     name: "Scian.io",
     tagline: "AI-powered revenue infrastructure for B2B SaaS",
     status: "Active",
-    price: null,
     link: "https://scian-site.vercel.app",
     icon: BarChart3,
   },
@@ -31,7 +30,6 @@ const PRODUCTS = [
     name: "FenceCalc",
     tagline: "Fence contractor estimating software",
     status: "Live",
-    price: "$79/mo",
     link: "https://fencecalc.co",
     icon: Wrench,
   },
@@ -39,23 +37,20 @@ const PRODUCTS = [
     name: "ShieldAI",
     tagline: "AI tool approval workflows for financial services",
     status: "Active",
-    price: "$199\u2013499/mo",
     link: null,
     icon: Shield,
   },
   {
     name: "FireLog",
-    tagline: "Digital fire inspection reports (NFPA compliant)",
+    tagline: "Digital fire inspection reports",
     status: "Active",
-    price: "$49/mo",
     link: null,
     icon: Flame,
   },
   {
     name: "CraneCheck",
-    tagline: "Crane inspection & OSHA compliance software",
+    tagline: "Crane inspection & compliance software",
     status: "Active",
-    price: "$79/mo",
     link: null,
     icon: FileCheck,
   },
@@ -63,7 +58,6 @@ const PRODUCTS = [
     name: "ClaimScribe AI",
     tagline: "AI damage scoping for restoration contractors",
     status: "Active",
-    price: "$199\u2013299/mo",
     link: null,
     icon: CreditCard,
   },
@@ -71,7 +65,6 @@ const PRODUCTS = [
     name: "WeldCert",
     tagline: "Welder certification & qualification tracking",
     status: "Active",
-    price: "$49\u2013299/mo",
     link: null,
     icon: Cpu,
   },
@@ -80,38 +73,38 @@ const PRODUCTS = [
 const STEPS = [
   {
     num: "01",
-    title: "Find",
-    desc: "Identify regulated niches with mandated documentation, paper-based workflows, and overpriced incumbents.",
+    title: "Identify",
+    desc: "Find regulated industries where documentation is legally mandated and current tools are outdated.",
   },
   {
     num: "02",
     title: "Build",
-    desc: "Ship an MVP in 2 weeks. Shared platform infrastructure: Clerk, Neon, Stripe, Next.js. Fork the codebase, customize for the vertical.",
+    desc: "Ship fast. Modern stack, mobile-first, designed for the people actually doing the work.",
   },
   {
     num: "03",
     title: "Validate",
-    desc: "30-day kill criteria. Paying customers or move on. No sunk cost fallacy. Zero tolerance for building without signal.",
+    desc: "Paying customers or move on. No vanity metrics, no sunk cost fallacy.",
   },
   {
     num: "04",
     title: "Scale",
-    desc: "SEO, cold outbound, community. No paid ads until product-market fit confirmed. Compound organic distribution.",
+    desc: "Compound distribution. Each product strengthens the portfolio and informs the next.",
   },
 ];
 
 const REASONS = [
   {
-    title: "Fear-Driven Buyers",
-    desc: "Failed audits mean fines, lost certifications, and shutdowns. Compliance software isn\u2019t a nice-to-have \u2014 it\u2019s insurance against business-ending risk.",
-  },
-  {
-    title: "Weak Incumbents",
-    desc: "Most regulated verticals are served by legacy tools built in 2005, charging enterprise prices for terrible UX. Modern alternatives win on experience and price.",
-  },
-  {
     title: "Mandated Demand",
-    desc: "OSHA, NFPA, EPA, AWS, ASME \u2014 regulations don\u2019t go away. The TAM doesn\u2019t shrink. Every new regulation creates more software buyers.",
+    desc: "Regulations don\u2019t go away. Every compliance requirement creates a permanent software buyer.",
+  },
+  {
+    title: "Underserved Markets",
+    desc: "Legacy tools with outdated UX and enterprise pricing. These industries deserve better.",
+  },
+  {
+    title: "High Retention",
+    desc: "Compliance workflows become infrastructure. Once adopted, switching costs are high and churn is low.",
   },
 ];
 
@@ -205,30 +198,28 @@ export default function Home() {
       <section className="py-20 border-b border-white/[0.04]">
         <div className="max-w-6xl mx-auto px-6">
           <BlurFade delay={0.1}>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+            <div className="grid grid-cols-3 gap-8 md:gap-12">
               {[
-                { value: 7, suffix: "", label: "Products" },
-                { value: 3, suffix: "", label: "Industries Served" },
-                { value: 2, suffix: "-week", label: "Build Cycles" },
+                { value: 7, suffix: "+", label: "Products" },
+                { value: 3, suffix: "+", label: "Industries" },
+                { value: 1, suffix: "", label: "Mission" },
               ].map((stat) => (
                 <div key={stat.label} className="text-center">
                   <div className="text-4xl md:text-5xl font-bold stat-glow">
-                    <NumberTicker value={stat.value} delay={0.3} />
-                    <span className="text-zinc-400 text-2xl md:text-3xl">{stat.suffix}</span>
+                    {stat.label === "Mission" ? (
+                      <span className="text-2xl md:text-3xl text-zinc-300">Modernize compliance</span>
+                    ) : (
+                      <>
+                        <NumberTicker value={stat.value} delay={0.3} />
+                        <span className="text-zinc-400 text-2xl md:text-3xl">{stat.suffix}</span>
+                      </>
+                    )}
                   </div>
-                  <p className="text-sm text-zinc-500 mt-2">{stat.label}</p>
+                  {stat.label !== "Mission" && (
+                    <p className="text-sm text-zinc-500 mt-2">{stat.label}</p>
+                  )}
                 </div>
               ))}
-              <div className="text-center">
-                <div className="text-4xl md:text-5xl font-bold stat-glow">
-                  <span className="text-zinc-400 text-2xl md:text-3xl">$</span>
-                  <NumberTicker value={49} delay={0.3} />
-                  <span className="text-zinc-400 text-2xl md:text-3xl">&ndash;</span>
-                  <NumberTicker value={299} delay={0.3} />
-                  <span className="text-zinc-400 text-2xl md:text-3xl">/mo</span>
-                </div>
-                <p className="text-sm text-zinc-500 mt-2">Price Range</p>
-              </div>
             </div>
           </BlurFade>
         </div>
@@ -249,7 +240,7 @@ export default function Home() {
           </BlurFade>
           <BlurFade delay={0.3}>
             <p className="text-lg text-zinc-400 leading-relaxed max-w-3xl">
-              Every regulated industry has the same problem: legally mandated documentation trapped in paper forms, spreadsheets, and legacy software charging $200+/month. We build modern alternatives &mdash; mobile-first, AI-enhanced, priced 60&ndash;80% lower. Each product targets a niche with weak incumbents and fear-driven buyers. If audits, fines, or shutdowns drive the purchase, we&apos;re interested.
+              Regulated industries run on mandated documentation &mdash; most of it still trapped in paper and legacy software. We build modern, mobile-first alternatives for the industries that need them most.
             </p>
           </BlurFade>
         </div>
@@ -285,15 +276,8 @@ export default function Home() {
                         {product.tagline}
                       </p>
                     </div>
-                    <div className="flex items-center justify-between mt-6 pt-4 border-t border-white/[0.04]">
-                      {product.price ? (
-                        <span className="text-sm font-medium text-zinc-300">
-                          {product.price}
-                        </span>
-                      ) : (
-                        <span className="text-sm text-zinc-600">Custom pricing</span>
-                      )}
-                      {product.link && (
+                    {product.link && (
+                      <div className="flex items-center justify-end mt-6 pt-4 border-t border-white/[0.04]">
                         <Link
                           href={product.link}
                           target="_blank"
@@ -301,8 +285,8 @@ export default function Home() {
                         >
                           Visit <ExternalLink className="w-3 h-3" />
                         </Link>
-                      )}
-                    </div>
+                      </div>
+                    )}
                   </div>
                 </BlurFade>
               );
