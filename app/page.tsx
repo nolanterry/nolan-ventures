@@ -184,7 +184,7 @@ export default function Home() {
       </AuroraBackground>
 
       {/* Stats */}
-      <section className="py-20 border-b border-white/[0.04]">
+      <section className="py-20 border-b border-white/[0.06] bg-dark-light">
         <div className="max-w-6xl mx-auto px-6">
           <BlurFade delay={0.1}>
             <div className="grid grid-cols-3 gap-8 md:gap-12">

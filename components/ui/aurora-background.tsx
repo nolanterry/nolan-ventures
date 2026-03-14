@@ -24,7 +24,7 @@ export const AuroraBackground = ({
       <div className="absolute inset-0 overflow-hidden">
         <div
           className={cn(
-            "pointer-events-none absolute -inset-[10px] opacity-50",
+            "pointer-events-none absolute -inset-[10px] opacity-20",
             "[--aurora:repeating-linear-gradient(100deg,var(--color-brand)_10%,var(--color-brand-light)_15%,var(--color-brand-dark)_20%,var(--color-brand-light)_25%,var(--color-brand)_30%)]\n",
             "[background-image:var(--aurora)]\n",
             "[background-size:300%,_200%]\n",
