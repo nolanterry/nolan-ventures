@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { AuroraBackground } from "@/components/ui/aurora-background";
 import { BlurFade } from "@/components/ui/blur-fade";
 import { ShimmerButton } from "@/components/ui/shimmer-button";
@@ -122,8 +123,9 @@ export default function Home() {
       {/* Header */}
       <header className="fixed top-0 inset-x-0 z-50 border-b border-white/[0.06] bg-dark/80 backdrop-blur-xl">
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-          <Link href="/" className="text-lg font-semibold tracking-tight">
-            arcline
+          <Link href="/" className="flex items-center gap-2.5">
+            <Image src="/arcline-logo.svg" alt="Arcline" width={28} height={28} className="invert" />
+            <span className="text-lg font-semibold tracking-tight">arcline</span>
           </Link>
           <nav className="hidden md:flex items-center gap-8 text-sm text-zinc-400">
             <Link href="#portfolio" className="hover:text-white transition-colors">
@@ -376,7 +378,10 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-6">
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
             <div>
-              <p className="text-lg font-semibold tracking-tight mb-2">arcline</p>
+              <div className="flex items-center gap-2.5 mb-2">
+                <Image src="/arcline-logo.svg" alt="Arcline" width={24} height={24} className="invert" />
+                <p className="text-lg font-semibold tracking-tight">arcline</p>
+              </div>
               <p className="text-sm text-zinc-500">
                 Venture studio building software for underserved markets.
               </p>
