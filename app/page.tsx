@@ -254,7 +254,7 @@ export default function Home() {
                   <div className="glass rounded-2xl p-6 h-full flex flex-col justify-between hover:border-white/10 transition-all duration-300 group">
                     <div>
                       <div className="flex items-center justify-between mb-4">
-                        <div className="w-10 h-10 rounded-xl bg-white/[0.06] border border-white/10 flex items-center justify-center overflow-hidden">
+                        <div className="w-10 h-10 rounded-xl bg-white border border-white/20 flex items-center justify-center overflow-hidden">
                           <Image src={product.logo} alt={product.name} width={24} height={24} />
                         </div>
                         <StatusBadge status={product.status} />
