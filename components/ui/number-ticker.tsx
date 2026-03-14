@@ -18,5 +18,5 @@ export function NumberTicker({ value, direction = "up", delay = 0, className, de
     [springValue, decimalPlaces]
   );
 
-  return <span className={cn("inline-block tabular-nums text-black dark:text-white tracking-wider", className)} ref={ref} />;
+  return <span className={cn("inline-block tabular-nums text-white tracking-wider", className)} ref={ref} />;
 }
