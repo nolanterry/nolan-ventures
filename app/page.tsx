@@ -9,13 +9,7 @@ import { NumberTicker } from "@/components/ui/number-ticker";
 import { AnimatedShinyText } from "@/components/ui/animated-shiny-text";
 import {
   ArrowRight,
-  Shield,
-  Flame,
-  CreditCard,
-  FileCheck,
-  Wrench,
   BarChart3,
-  Cpu,
   ExternalLink,
 } from "lucide-react";
 
@@ -25,42 +19,42 @@ const PRODUCTS = [
     tagline: "Fence contractor estimating software",
     status: "Live",
     link: "https://fencecalc.co",
-    icon: Wrench,
+    logo: "/logos/fencecalc.svg",
   },
   {
     name: "ShieldAI",
     tagline: "AI tool approval workflows for financial services",
     status: "Active",
     link: null,
-    icon: Shield,
+    logo: "/logos/shieldai.svg",
   },
   {
     name: "FireLog",
     tagline: "Digital fire inspection reports",
     status: "Active",
     link: null,
-    icon: Flame,
+    logo: "/logos/firelog.svg",
   },
   {
     name: "CraneCheck",
     tagline: "Crane inspection & compliance software",
     status: "Active",
     link: null,
-    icon: FileCheck,
+    logo: "/logos/cranecheck.svg",
   },
   {
     name: "ClaimScribe AI",
     tagline: "AI damage scoping for restoration contractors",
     status: "Active",
     link: null,
-    icon: CreditCard,
+    logo: "/logos/claimscribe.svg",
   },
   {
     name: "WeldCert",
     tagline: "Welder certification & qualification tracking",
     status: "Active",
     link: null,
-    icon: Cpu,
+    logo: "/logos/weldcert.svg",
   },
 ];
 
@@ -255,14 +249,13 @@ export default function Home() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
             {PRODUCTS.map((product, i) => {
-              const Icon = product.icon;
               return (
                 <BlurFade key={product.name} delay={0.1 + i * 0.05}>
                   <div className="glass rounded-2xl p-6 h-full flex flex-col justify-between hover:border-white/10 transition-all duration-300 group">
                     <div>
                       <div className="flex items-center justify-between mb-4">
-                        <div className="w-10 h-10 rounded-xl bg-brand/10 border border-brand/20 flex items-center justify-center">
-                          <Icon className="w-5 h-5 text-brand-light" />
+                        <div className="w-10 h-10 rounded-xl bg-white/[0.06] border border-white/10 flex items-center justify-center overflow-hidden">
+                          <Image src={product.logo} alt={product.name} width={24} height={24} className="invert" />
                         </div>
                         <StatusBadge status={product.status} />
                       </div>
