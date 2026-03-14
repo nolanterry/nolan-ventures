@@ -255,7 +255,7 @@ export default function Home() {
                     <div>
                       <div className="flex items-center justify-between mb-4">
                         <div className="w-10 h-10 rounded-xl bg-white/[0.06] border border-white/10 flex items-center justify-center overflow-hidden">
-                          <Image src={product.logo} alt={product.name} width={24} height={24} className="invert" />
+                          <Image src={product.logo} alt={product.name} width={24} height={24} />
                         </div>
                         <StatusBadge status={product.status} />
                       </div>
