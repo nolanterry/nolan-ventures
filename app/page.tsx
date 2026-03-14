@@ -184,28 +184,29 @@ export default function Home() {
       </AuroraBackground>
 
       {/* Stats */}
-      <section className="py-20 border-b border-white/[0.06] bg-dark-light">
-        <div className="max-w-6xl mx-auto px-6">
+      <section className="py-12 md:py-16 border-b border-white/[0.04]">
+        <div className="max-w-4xl mx-auto px-6">
           <BlurFade delay={0.1}>
-            <div className="grid grid-cols-3 gap-8 md:gap-12">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10">
               {[
                 { value: 7, suffix: "+", label: "Products" },
                 { value: 3, suffix: "+", label: "Industries" },
-                { value: 1, suffix: "", label: "Mission" },
+                { value: 6, suffix: "+", label: "Verticals" },
+                { value: 1, suffix: "", label: "Mission", text: "Modernize compliance" },
               ].map((stat) => (
                 <div key={stat.label} className="text-center">
-                  <div className="text-4xl md:text-5xl font-bold stat-glow">
-                    {stat.label === "Mission" ? (
-                      <span className="text-2xl md:text-3xl text-zinc-300">Modernize compliance</span>
+                  <div className="text-3xl md:text-4xl font-bold text-white">
+                    {stat.text ? (
+                      <span className="text-lg md:text-xl text-zinc-300">{stat.text}</span>
                     ) : (
                       <>
                         <NumberTicker value={stat.value} delay={0.3} />
-                        <span className="text-zinc-400 text-2xl md:text-3xl">{stat.suffix}</span>
+                        <span className="text-zinc-500">{stat.suffix}</span>
                       </>
                     )}
                   </div>
-                  {stat.label !== "Mission" && (
-                    <p className="text-sm text-zinc-500 mt-2">{stat.label}</p>
+                  {!stat.text && (
+                    <p className="text-xs text-zinc-500 mt-1.5 uppercase tracking-wider">{stat.label}</p>
                   )}
                 </div>
               ))}
@@ -215,7 +216,7 @@ export default function Home() {
       </section>
 
       {/* Thesis */}
-      <section id="thesis" className="py-24">
+      <section id="thesis" className="py-16 md:py-20">
         <div className="max-w-4xl mx-auto px-6">
           <BlurFade delay={0.1}>
             <p className="text-sm font-medium text-brand-light uppercase tracking-wider mb-4">
