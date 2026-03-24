@@ -5,8 +5,8 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Arcline Ventures — Micro-SaaS for Regulated Industries",
-  description: "Venture studio building modern SaaS tools for underserved regulated industries. Compliance-driven workflows. Mobile-first. Priced for the market.",
+  title: "Arcline — Software Portfolio",
+  description: "Arcline builds modern software for industries still running on paper. FenceCalc, FireLog, CraneCheck — real products, live now.",
 };
 
 export default function RootLayout({

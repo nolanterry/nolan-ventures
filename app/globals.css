@@ -37,3 +37,4 @@ body {
 .text-gradient-brand { background: linear-gradient(135deg, #ffffff 0%, #d4d4d8 40%, #a1a1aa 70%, #71717a 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
 .divider { height: 1px; background: rgba(255,255,255,0.04); }
 .stat-glow { text-shadow: 0 0 40px rgba(255, 255, 255, 0.15); }
+.tech-grid { background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px); background-size: 60px 60px; }
