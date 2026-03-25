@@ -9,12 +9,9 @@
 
 | # | Site | Domain | Sitemap URL |
 |---|------|--------|-------------|
-| 1 | CraneCheck | cranecheck.com | https://cranecheck.com/sitemap.xml |
-| 2 | ShieldAI | tryshieldai.com | https://tryshieldai.com/sitemap.xml |
-| 3 | WeldCert | weldcert.io | https://weldcert.io/sitemap.xml |
-| 4 | ClaimScribe | claimscribe.ai | https://claimscribe.ai/sitemap.xml |
-| 5 | FireLog | firelog.pro | https://firelog.pro/sitemap.xml |
-| 6 | FenceCalc | thefencecalc.com | https://thefencecalc.com/sitemap.xml |
+| 1 | FenceCalc | fencecalc.co | https://fencecalc.co/sitemap.xml |
+| 2 | FireLog | firelogai.com | https://firelogai.com/sitemap.xml |
+| 3 | CraneCheck | cranecheck.co | https://cranecheck.co/sitemap.xml |
 
 ---
 
