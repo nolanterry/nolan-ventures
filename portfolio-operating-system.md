@@ -1,6 +1,6 @@
 # Portfolio Operating System
 
-**For:** Nolan Terry | **Version:** 1.0 | **Last Updated:** 2026-05-02
+**For:** Nolan Terry | **Version:** 1.1 | **Last Updated:** 2026-05-02
 
 A decision framework for validating, building, and scaling a vertical SaaS portfolio as a solo operator with AI leverage.
 
@@ -16,7 +16,7 @@ Score each dimension 1-10. Be honest — this kills bad ideas before they kill y
 | **Buyer Accessibility** | /10 | Can you reach 100 prospects in a week? Are they on LinkedIn/email? Do they answer cold outreach? Are there concentrated communities? | LinkedIn Sales Nav count, trade association directories, Facebook group sizes, industry event lists |
 | **Willingness to Pay** | /10 | Do they already pay for software? What's their current spend? Is this a line item they understand? Would they pay before seeing the product? | Competitor pricing pages, G2/Capterra reviews mentioning price, interview responses, existing tool spend |
 | **Competitive White Space** | /10 | Who else solves this? How well? Are incumbents asleep or just invisible to you? Is the gap real or perceived? | G2 category search, Crunchbase funding data, Google Ads keyword competition, app store searches, trade publication ads |
-| **TAM (Addressable Market)** | /10 | How many potential buyers exist? What's realistic penetration in 3 years? Is the market growing or shrinking? | IBISWorld reports, Census Bureau (NAICS codes), trade association membership counts, BLS data |
+| **TAM + Expansion Path** | /10 | Can you dominate the wedge market? Is there a clear path from niche → adjacent → platform? Is the wedge small enough to avoid VC competition? | IBISWorld reports, Census Bureau (NAICS codes), trade association membership counts, Crunchbase (check for funded competitors), expansion market sizing |
 | **Channel Fit** | /10 | Does a proven, affordable channel exist to reach these buyers? Can you test it in <$500? Is CAC likely <1/3 of first-year ACV? | Facebook Ads audience builder, Google Keyword Planner, LinkedIn audience estimates, cold email test results |
 | **Technical Feasibility** | /10 | Can you ship an MVP in <4 weeks with AI assistance? Are there hard integrations (QuickBooks, state APIs)? Do you need domain expertise you lack? | API documentation review, similar product teardowns, tech stack assessment |
 
@@ -35,6 +35,74 @@ Score each dimension 1-10. Be honest — this kills bad ideas before they kill y
 - Pain Acuteness + Willingness to Pay combined **<10** = kill (no one will pay)
 - Buyer Accessibility + Channel Fit combined **<8** = kill (can't reach them affordably)
 - Competitive White Space **≤3** AND no clear differentiation angle = kill
+
+### TAM + Expansion Path Scoring (Thiel Wedge Model)
+
+**Core principle:** Score the wedge on "can I monopolize this?" and the expansion on "is there a path to $500M+?" A small niche you can own beats a large market where you're one of ten.
+
+| Score | Wedge TAM | Expansion Path | VC Competition | Example |
+|-------|-----------|----------------|----------------|---------|
+| **10/10** | $20-100M (ownable niche) | Clear path to $500M+ through adjacent verticals | Zero funded competitors | Fence estimating → fence OS → contractor OS |
+| **8-9/10** | $50-200M (ownable with effort) | Path to $200-500M through vertical expansion | 1 underfunded competitor | Fire compliance → building compliance → facility management |
+| **6-7/10** | $100-500M (harder to dominate) | Adjacent markets exist but expansion is unclear | 1-2 competitors, none dominant | General SMB invoicing (big market but competitive) |
+| **4-5/10** | <$15M (ceiling too low, even with expansion) OR $500M+ with funded players | Limited expansion path OR crowded expansion markets | 2-3 funded competitors | Niche tool in dying industry |
+| **1-3/10** | Any size but 3+ well-funded competitors already there | Expansion markets dominated by incumbents | VC-saturated | Restaurant POS (Toast, Square, Clover already won) |
+
+**The Thiel Test (Zero to One):**
+1. Can you capture 50%+ of the wedge market within 24 months?
+2. Is the wedge small enough that no VC-backed company will pursue it?
+3. Does winning the wedge give you an unfair advantage in the next market?
+4. Can you expand concentrically without rebuilding from scratch?
+
+If yes to all 4 → score 9-10. If yes to 3 → score 7-8. If yes to <2 → score 4 or below.
+
+### Wedge → Platform Expansion Framework
+
+Every product should have a mapped expansion path before building. If you can't draw this path, the TAM ceiling is real.
+
+```
+STAGE 1: WEDGE (Months 1-12)
+│ Single tool solving one acute pain
+│ Goal: Monopolize the niche. 50%+ market share.
+│ Revenue: $79-149/mo per customer
+│ Example: Fence estimating calculator
+│
+STAGE 2: WORKFLOW EXPANSION (Months 6-18)
+│ Add adjacent features the buyer needs daily
+│ Goal: Become the tool they open every morning
+│ Revenue: $149-299/mo per customer
+│ Example: Add CRM, job scheduling, invoicing to FenceCalc
+│
+STAGE 3: VERTICAL DOMINATION (Months 12-36)
+│ Full operating system for the niche
+│ Goal: 70%+ of their business runs on your platform
+│ Revenue: $299-499/mo + embedded finance (payments, lending)
+│ Example: Complete fence contractor OS with payment processing
+│
+STAGE 4: ADJACENT EXPANSION (Months 24-48)
+│ Fork the playbook into neighboring verticals
+│ Goal: Apply proven product + GTM to similar buyers
+│ Revenue: Multiply customer base 5-10x
+│ Example: Deck contractors, general contractors, landscaping
+│
+STAGE 5: PLATFORM (Months 36-60+)
+│ Horizontal layer across verticals
+│ Goal: Network effects kick in — data, marketplace, financing
+│ Revenue: $500-1,000+ effective revenue per customer
+│ Example: Contractor OS across trades with shared data, lending, insurance
+```
+
+**Revenue per customer expansion (FenceCalc example):**
+
+| Stage | Product | Price | Embedded Finance | Effective Revenue/Customer |
+|-------|---------|-------|------------------|---------------------------|
+| Wedge | Estimating tool | $79/mo | — | $79/mo |
+| Workflow | + CRM + scheduling | $149/mo | — | $149/mo |
+| Vertical | + invoicing + payments | $199/mo | 2.5% on $15K/mo in jobs = $375/mo | $574/mo |
+| Vertical+ | + customer financing | $199/mo | + 4% on $8K/mo financed = $320/mo | $894/mo |
+| Platform | + materials ordering + insurance | $249/mo | + supplier kickbacks + insurance commissions | $1,200+/mo |
+
+**The wedge doesn't need to be innovative. It needs to be the door.** Once you own the daily workflow, switching costs compound and you capture 10x the revenue per customer through expansion.
 
 ---
 
@@ -386,7 +454,7 @@ No emotions. No sunk cost fallacy. These are binary.
 | Negative unit economics (CAC > 12-month LTV) | 90 days | **Kill** |
 | No moat identified | 60 days | Deprioritize — milk for cash but don't invest |
 | Founder lost conviction | Any time | **Kill** — you won't outwork someone who believes |
-| Market size discovered to be <$10M TAM | Any time | **Kill** — not worth portfolio slot |
+| Wedge TAM <$10M with no expansion path | Any time | **Kill** — ceiling too low even with domination |
 
 ### Anti-Kill Rules (Don't Kill Prematurely)
 
@@ -449,13 +517,14 @@ Treat each product as a portfolio investment:
 | Buyer Accessibility | 7/10 | Fence contractors are on Facebook, findable via Google Maps, answer phones |
 | Willingness to Pay | 5/10 | **Unknown.** Have you validated $79/mo pricing with 10+ contractors? |
 | Competitive White Space | 4/10 | Jobber, ServiceTitan, Fence Estimate Pro exist. What's the wedge? |
-| TAM | 6/10 | ~40K fence contractors in US. At $79/mo × 10% penetration = $3.8M ARR ceiling |
+| TAM + Expansion Path | 8/10 | Wedge: ~40K fence contractors ($3.8M ARR ceiling at $79/mo). But expansion path is strong: estimating → CRM → full contractor OS → adjacent trades (deck, landscape, general). Wedge is small enough that no VC will compete. Path to $500M+ TAM through concentric expansion. |
 | Channel Fit | 7/10 | Cold call + Facebook groups work for contractors |
 | Technical Feasibility | 9/10 | Straightforward build, no hard integrations |
-| **Total** | **44/70** | **Borderline — proceed only with validated WTP and clear competitive angle** |
+| **Total** | **46/70** | **Proceed with caution — validate WTP, but expansion path is the real asset** |
 
 **Missing data:** Willingness to pay validation, competitive differentiation clarity
-**Recommendation:** **Pivot or validate hard.** You need 10 conversations where contractors say "I'd pay $79/mo for this TODAY." If you can't get that, kill it.
+**Expansion path:** Fence estimating ($79/mo) → Fence CRM + scheduling ($149/mo) → Fence OS with payments ($199/mo + 2.5% processing) → Fork to deck/landscape/general contractors. Effective revenue grows from $79 → $500+/customer/mo.
+**Recommendation:** **Validate WTP hard.** The wedge TAM is small but ownable, and the expansion path is the real play. Need 10 conversations where contractors say "I'd pay $79/mo for this TODAY." If you can't get that, the wedge doesn't work and the expansion path is moot.
 
 ### CraneCheck — Validation Scorecard
 
@@ -465,10 +534,10 @@ Treat each product as a portfolio investment:
 | Buyer Accessibility | 5/10 | Crane operators/companies are niche. Harder to reach than general contractors. |
 | Willingness to Pay | 6/10 | Compliance = budget exists. But haven't validated price point. |
 | Competitive White Space | 6/10 | Some incumbents but old/expensive. Real gap at SMB price point. |
-| TAM | 5/10 | ~15K crane companies in US. Niche but potentially high ACV ($150-300/mo). |
+| TAM + Expansion Path | 7/10 | Wedge: ~15K crane companies (small, ownable). Expansion: crane inspections → heavy equipment inspections → industrial safety compliance → OSHA compliance OS. High ACV ($150-300/mo). Path to $200M+ TAM. No VC competition in the wedge. |
 | Channel Fit | 5/10 | Trade shows, OSHA consultants, insurance partnerships. Slower channels. |
 | Technical Feasibility | 7/10 | Need domain expertise on inspection standards. AI can help parse regulations. |
-| **Total** | **41/70** | **Risky but has compliance moat potential. Needs problem validation.** |
+| **Total** | **43/70** | **Risky but has compliance moat potential + good expansion path. Needs problem validation.** |
 
 **Missing data:** Customer interviews, price validation, channel test results
 **Recommendation:** **Run Stage 1 validation.** Do 10 interviews with crane company safety managers. If compliance pain is confirmed and they'd pay $200+/mo, proceed. If not, kill.
@@ -481,10 +550,10 @@ Treat each product as a portfolio investment:
 | Buyer Accessibility | 6/10 | Fire marshals, building managers, compliance officers. Reachable via municipalities. |
 | Willingness to Pay | 7/10 | Budget exists for compliance tools. Government/institutional buyers = reliable. |
 | Competitive White Space | 7/10 | Fragmented market, mostly paper or generic spreadsheets. No clear SaaS leader. |
-| TAM | 5/10 | Niche — building managers with fire log requirements. Need to size this. |
+| TAM + Expansion Path | 7/10 | Wedge: building managers with fire log requirements (niche, ownable). Expansion: fire compliance → building safety compliance → facility management compliance OS. Government/institutional buyers = stable. Path to $300M+ TAM. Zero VC interest in fire log compliance. |
 | Channel Fit | 5/10 | Government procurement is slow. Association partnerships could work. |
 | Technical Feasibility | 8/10 | Straightforward — forms, scheduling, reminders, PDF reports. |
-| **Total** | **46/70** | **Strongest of the three. Compliance-driven demand is real.** |
+| **Total** | **48/70** | **Strongest of the three. Compliance-driven demand + clean expansion path.** |
 
 **Missing data:** Exact TAM sizing, procurement cycle length, price validation
 **Recommendation:** **Continue — highest conviction.** Run 10 interviews with building managers/fire marshals. Validate $49-99/mo pricing. If TAM is >$20M, this becomes priority #1.
